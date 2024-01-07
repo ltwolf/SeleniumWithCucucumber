@@ -35,8 +35,8 @@ public class Hook extends BaseUtil{
     public void InitializeTest(Scenario scenario) {
         base.scenarioDef = base.features.createNode(scenario.getName());
         
-        WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "c:\\Libs\\chromedriver.exe");
+        WebDriverManager.chromedriver().version("114").setup();
+        //System.setProperty("webdriver.chrome.driver", "c:\\Libs\\chromedriver.exe");
         
         /*
             assumeThat(chrome114File).exists();
