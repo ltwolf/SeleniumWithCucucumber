@@ -38,7 +38,7 @@ public class Hook extends BaseUtil{
         //System.setProperty("webdriver.chrome.driver", "c:\\Libs\\chromedriver.exe");
         //WebDriverManager.chromedriver().setup();
         
-        assumeThat(chrome114File).exists();
+        //assumeThat(chrome114File).exists();
         String chrome114Command = String.format(
                 "cmd.exe /C wmic datafile where name=\"%s\" get Version /value",
                 chrome114Path);
