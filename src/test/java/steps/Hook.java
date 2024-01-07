@@ -24,8 +24,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class Hook extends BaseUtil{
 
     private BaseUtil base;
-    static String chrome114Path = "C:\\\\Libs\\\\chromedriver.EXE";
-    static File chrome114File = new File(chrome114Path);
+    //static String chrome114Path = "C:\\\\Libs\\\\chromedriver.EXE";
+    //static File chrome114File = new File(chrome114Path);
     
     public Hook(BaseUtil base) {
         this.base = base;
@@ -35,16 +35,17 @@ public class Hook extends BaseUtil{
     public void InitializeTest(Scenario scenario) {
         base.scenarioDef = base.features.createNode(scenario.getName());
         
-        //System.setProperty("webdriver.chrome.driver", "c:\\Libs\\chromedriver.exe");
-        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "c:\\Libs\\chromedriver.exe");
         
-        //assumeThat(chrome114File).exists();
-        String chrome114Command = String.format(
-                "cmd.exe /C wmic datafile where name=\"%s\" get Version /value",
-                chrome114Path);
-        WebDriverManager.chromedriver()
-                .browserVersionDetectionCommand(chrome114Command).setup();
-        
+        /*
+            assumeThat(chrome114File).exists();
+            String chrome114Command = String.format(
+                    "cmd.exe /C wmic datafile where name=\"%s\" get Version /value",
+                    chrome114Path);
+            WebDriverManager.chromedriver()
+                    .browserVersionDetectionCommand(chrome114Command).setup();
+        */
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless");
         base.Driver = new ChromeDriver(chromeOptions);
