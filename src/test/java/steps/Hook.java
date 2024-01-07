@@ -24,8 +24,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class Hook extends BaseUtil{
 
     private BaseUtil base;
-    static String chromeDriver = "C:\\Libs\\chromedriver.exe";
-    static String chrome =  "C:\\Libs\\chrome.exe";
     
     public Hook(BaseUtil base) {
         this.base = base;
@@ -51,9 +49,9 @@ public class Hook extends BaseUtil{
             }
         */
         base.scenarioDef = base.features.createNode(scenario.getName());
-        System.setProperty("webdriver.chrome.driver", chromeDriver);
+        System.setProperty("webdriver.chrome.driver",  "C:\\Libs\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setBinary(chrome);
+        chromeOptions.setBinary( "C:\\Libs\\chrome.exe");
         chromeOptions.addArguments("--headless");
         base.Driver = new WebDriverManager.ChromeDriver(chromeOptions);
     }
