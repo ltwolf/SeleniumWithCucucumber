@@ -15,7 +15,7 @@ import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.checkerframework.WebDriver;
+
 
 /**
  * Created by Karthik on 31/01/2019.
