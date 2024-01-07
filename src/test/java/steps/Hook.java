@@ -25,7 +25,7 @@ public class Hook extends BaseUtil{
 
     private BaseUtil base;
     static String chrome114Path = "C:\\\\Libs\\\\chromedriver.EXE";
-    static File chrome114File = new File(chromeBetaPath);
+    static File chrome114File = new File(chrome114Path);
     
     public Hook(BaseUtil base) {
         this.base = base;
