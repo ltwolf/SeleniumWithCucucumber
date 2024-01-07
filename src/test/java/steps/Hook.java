@@ -33,6 +33,23 @@ public class Hook extends BaseUtil{
    
     @Before
     public void InitializeTest(Scenario scenario) {
+        /*
+            WebDriverManager manager = WebDriverManager.chromedriver();
+            manager = manager.proxy(String.format("%s:%s", proxySettings.proxyHost, proxySettings.proxyPort));
+            
+            String installedVersion = manager.detectBrowserVersion().orElse(null);
+            Stream<String> majorVersions = manager.getDriverVersions().stream()
+                    .filter(v -> v.startsWith(installedVersion));
+            String latestVersion = majorVersions.reduce((a, b) -> b).orElse(null);
+            
+            if (latestVersion != null) {
+                logger.info("Manually detected driver version to " + latestVersion);
+                manager.avoidBrowserDetection();
+                manager.setDriverVersion(latestVersion);
+            } else {
+                logger.info("Automatically detect driver version");
+            }
+        */
         base.scenarioDef = base.features.createNode(scenario.getName());
 
         //WebDriverManager.chromedriver().setDriverVersion("114").setup();
